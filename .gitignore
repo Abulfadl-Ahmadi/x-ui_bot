@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+bot.db
+.env
+
+All-Inbounds-Subs.txt
+All-Inbounds.txt
