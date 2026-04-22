@@ -914,7 +914,6 @@ async def subscription_type_callback(update: Update, context: ContextTypes.DEFAU
         return
 
     query = update.callback_query
-    await query.answer()
 
     data = query.data or ""
     if not data.startswith("subscription_type:"):
@@ -957,6 +956,8 @@ async def subscription_type_callback(update: Update, context: ContextTypes.DEFAU
     context.user_data["pending_subscription_source_mode"] = source_mode
     context.user_data["waiting_for_subscription_type"] = False
     context.user_data["waiting_for_discount"] = True
+
+    await query.answer()
 
     await query.edit_message_text(
         "✅ نوع اشتراک انتخاب شد.\n\n"
